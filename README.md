@@ -26,8 +26,6 @@ npm install
 
 ```json
 {
-    "DISCORD_APPLICATION_ID": "//YOUR APPLICATION ID//",
-    "debug": false,
     "blacklist_channel": "//THE CHANNEL ID//",
 }
 ```
