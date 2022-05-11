@@ -1,6 +1,6 @@
 {
   "name": "lennas_blacklist",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Automate Bot for Lennas Blacklist Channel",
   "main": "index.js",
   "scripts": {
