@@ -1,7 +1,7 @@
 {
-  "name": "lennas_blacklist",
+  "name": "blacklist_discord_bot",
   "version": "1.0.2",
-  "description": "Automate Bot for Lennas Blacklist Channel",
+  "description": "A small Bot which ban all userid's which are set in blacklist webhooks from Servers",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
