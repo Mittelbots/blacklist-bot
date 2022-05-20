@@ -11,7 +11,9 @@ module.exports.messageCreate = ({message, bot}) => {
         for(let i in messageArray) {
             if(!isNaN(messageArray[i])) {
                 let user_id = messageArray[i].match(/\d/g);
-                users.push(user_id.join(""));
+                try {
+                    users.push(user_id.join(""));
+                }catch(err){}
             }
         }
 
