@@ -21,7 +21,7 @@ const bot = new Discord.Client({
 bot.setMaxListeners(10);
 
 bot.on("messageCreate", async message => {
-    return await messageCreate({
+    return messageCreate({
         message,
         bot
     })
