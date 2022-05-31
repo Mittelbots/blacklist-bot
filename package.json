@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "pm2_start": "pm2 start shard.js --name lennas_blacklist",
-    "pm2_restart": "npm run pm2_stop && pm2 delete lennas_blacklist && npm run pm2_start",
-    "pm2_stop": "pm2 stop lennas_blacklist",
+    "pm2_start": "pm2 start shard.js --name blacklist_bot",
+    "pm2_restart": "npm run pm2_stop && pm2 delete blacklist_bot && npm run pm2_start",
+    "pm2_stop": "pm2 stop blacklist_bot",
     "dev": "nodemon index.js"
   },
   "repository": {
