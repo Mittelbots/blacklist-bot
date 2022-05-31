@@ -5,6 +5,8 @@ const {
 const {
     spawn
 } = require('child_process');
+const { createSlashCommands } = require("./utils/functions/createSlashCommands/createSlashCommands");
+const { handleSlashCommands } = require("./src/slash_commands");
 
 const token = require('./assets/token/token.json').token;
 
@@ -19,6 +21,7 @@ const bot = new Discord.Client({
 });
 
 bot.setMaxListeners(10);
+createSlashCommands()
 
 bot.on("messageCreate", async message => {
     messageCreate({
@@ -26,6 +29,13 @@ bot.on("messageCreate", async message => {
         bot
     })
 });
+
+bot.on("interactionCreate", (main_interaction) => {
+    handleSlashCommands({
+        main_interaction,
+        bot
+    })
+})
 
 
 process.on('unhandledRejection', err => {
