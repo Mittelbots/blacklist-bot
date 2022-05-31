@@ -3,6 +3,5 @@
     "Bot_Owner_ID": "395923095472570368",
     "debug_server": "",
     "DISCORD_APPLICATION_ID": "",
-    "debug": false,
-    "blacklist_channel": ""
+    "debug": false
 }
