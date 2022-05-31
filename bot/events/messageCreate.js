@@ -1,7 +1,7 @@
 const config = require('../../assets/config/config.json');
 
 module.exports.messageCreate = async ({message, bot}) => {
-    if(message.channel.id === config.blacklist_channel) { //message.webhookId && 
+    if(message.webhookId && message.channel.id === config.blacklist_channel) { 
         console.info('MessageCreate', new Date().toLocaleString('de-DE', {timeZone: 'Europe/Berlin'}));
 
         let messageArray = message.content.split(" ");
