@@ -26,7 +26,7 @@ npm install
 
 ```json
 {
-    "blacklist_channel": "//THE CHANNEL ID//",
+    "DISCORD_APPLICATION_ID": "//YOUR APPLICATION ID//",
 }
 ```
 
@@ -38,7 +38,14 @@ npm install
 }
 ```
 
+### ➡️ <b>5.</b> Change `assets/settings/b_channels.example.json` to `b_channels.json`. But dont write anything in it.
+
+```json
+{}
+```
+
 ### ➡️ <b>5.</b> Run the bot
+
 
 ```txt
 npm start
@@ -47,6 +54,11 @@ npm start
 start: 
 npm run pm2_start
 
+restart:
+npm run pm2_restart
+
 stop:
 npm run pm2_stop
 ```
+
+### ➡️ <b>6.</b> Type /settings setchannel [Your Channel]
