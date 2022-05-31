@@ -1,6 +1,6 @@
 const config = require('../../assets/config/config.json');
 
-module.exports.messageCreate = ({message, bot}) => {
+module.exports.messageCreate = async ({message, bot}) => {
     if(message.webhookId && message.channel.id === config.blacklist_channel) {
         console.info('MessageCreate', new Date().toLocaleString('de-DE', {timeZone: 'Europe/Berlin'}));
 
@@ -20,7 +20,7 @@ module.exports.messageCreate = ({message, bot}) => {
         console.info('For Loop passed', users, new Date().toLocaleString('de-DE', {timeZone: 'Europe/Berlin'}));
 
         for(let i in users) {
-            message.guild.members.ban(users[i], {
+            await message.guild.members.ban(users[i], {
                 reason: "Banned by Blacklist"
             })
             .then(() => {

@@ -21,7 +21,7 @@ const bot = new Discord.Client({
 bot.setMaxListeners(10);
 
 bot.on("messageCreate", async message => {
-    return messageCreate({
+    messageCreate({
         message,
         bot
     })
@@ -50,6 +50,15 @@ process.on('uncaughtException', err => {
 
 bot.once('ready', async () => {
     console.log(`---- BOT IS READY..., ${new Date()}`);
+
+    setTimeout(() => {
+        console.log(`---- BOT RESTARTED DUE SELF RESTART EACH 24h..., ${new Date()}`);
+        spawn(process.argv[1], process.argv.slice(2), {
+            detached: true,
+            stdio: ['ignore', null, null]
+        }).unref()
+        process.exit()
+    }, 14400000); // 24h
 })
 
 bot.login(token);
