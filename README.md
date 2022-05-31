@@ -10,6 +10,12 @@ The Bot bans every ID from a webhook message automatically.
 
 ## <b>How to use it?</b>
 
+### <b>Use this link if you don't want to self-host the bot.</b>
+
+https://discord.com/api/oauth2/authorize?client_id=973683659666235482&permissions=2052&scope=bot%20applications.commands
+
+<br>
+
 ### ➡️ <b>1.</b> Clone the repository
 
 ```txt
