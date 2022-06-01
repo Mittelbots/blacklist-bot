@@ -5,34 +5,14 @@ module.exports.messageCreate = async ({message, bot}) => {
     if(message.webhookId && channels[message.guild.id] === message.channel.id) { 
         console.info('MessageCreate', new Date().toLocaleString('de-DE', {timeZone: 'Europe/Berlin'}));
 
+        message.content = message.content.replace(/\n/g, ' ');
         let messageArray = message.content.split(" ");
-
-        for(let i in messageArray) {
-            messageArray[i] = messageArray[i].replaceAll('\n', ' ');
-            messageArray[i] = messageArray[i].split(" ")
-
-            if(messageArray[i].length > 1) {
-                for(let m in messageArray[i]) {
-                    if(isNaN(messageArray[i][m])) {
-                        delete messageArray[i][m];
-                    }
-                }
-            }
-        }
 
         var users = [];
         
         for(let i in messageArray) {
-            if(messageArray[i].length > 1) {
-                for(let m in messageArray[i]) {
-                    if(!isNaN(messageArray[i][m])) {
-                        pushUserId(messageArray[i][m]);
-                    }
-                }
-            }else {
-                if(!isNaN(messageArray[i])) {
-                    pushUserId(messageArray[i]);
-                }
+            if(!isNaN(messageArray[i])) {
+                pushUserId(messageArray[i]);
             }
         }
 
@@ -53,7 +33,9 @@ module.exports.messageCreate = async ({message, bot}) => {
             })
             .then(() => {
                 console.info('User banned', users[i], new Date().toLocaleString('de-DE', {timeZone: 'Europe/Berlin'}));
-                message.channel.send(`${users[i]} has been banned.`);
+                message.channel.send(`${users[i]} has been banned.`).catch(err => {
+                    message.react('✅').catch(err => {});
+                })
             })
             .catch(err => {
                 console.info('ERRO WHILE BANNING', users[i], new Date().toLocaleString('de-DE', {timeZone: 'Europe/Berlin'}));
