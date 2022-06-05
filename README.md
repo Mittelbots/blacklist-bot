@@ -54,7 +54,7 @@ npm install
 
 
 ```txt
-npm start
+npm run start
 
 // If you use pm2
 start: 
@@ -65,6 +65,9 @@ npm run pm2_restart
 
 stop:
 npm run pm2_stop
+
+//For Development reasons
+npm run dev
 ```
 
 ### ➡️ <b>6.</b> Type /settings setchannel [Your Channel]
