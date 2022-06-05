@@ -60,6 +60,7 @@ process.on('uncaughtException', err => {
 
 bot.once('ready', async () => {
     console.log(`---- BOT IS READY..., ${new Date()}`);
+    console.log(`I'm on ${bot.guilds.cache.size} Server(s)`)
 });
 
 bot.login(token);
