@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/Mittelbots/lennas-blacklist-bot#readme",
   "dependencies": {
-    "@discordjs/builders": "^0.13.0",
+    "@discordjs/builders": "^0.15.0",
     "@discordjs/rest": "^0.4.1",
     "discord.js": "^13.8.1",
     "nodemon": "^2.0.16"
