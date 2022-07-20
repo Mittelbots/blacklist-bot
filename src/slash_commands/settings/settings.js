@@ -1,14 +1,12 @@
 const {
     SlashCommandBuilder
-} = require('@discordjs/builders');
+} = require('discord.js');
 const fs = require('fs');
 
 module.exports.run = async ({
     main_interaction,
     bot
 }) => {
-
-    
     const hasPermission = await main_interaction.member.permissions.has('ADMINISTRATOR');
     if(!hasPermission) {
         return main_interaction.reply({
@@ -32,7 +30,7 @@ module.exports.run = async ({
                     return main_interaction.reply({
                         content: `Channel set to <#${channel.id}>`,
                         ephemeral: true
-                    })
+                    }).catch(err => {})
                 });
             }else {
                 return main_interaction.reply({

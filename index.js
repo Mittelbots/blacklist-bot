@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+const {GatewayIntentBits, Options, Client} = require("discord.js");
 const {
     messageCreate
 } = require("./bot/events/messageCreate");
@@ -10,9 +10,9 @@ const { handleSlashCommands } = require("./src/slash_commands");
 
 const token = require('./assets/token/token.json').token;
 
-const bot = new Discord.Client({
-    intents: ["GUILDS", "GUILD_MESSAGES", "GUILD_MEMBERS", "GUILD_VOICE_STATES", "GUILD_MESSAGE_REACTIONS"],
-    makeCache: Discord.Options.cacheWithLimits({
+const bot = new Client({
+    intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.GuildMembers, GatewayIntentBits.GuildVoiceStates , GatewayIntentBits.GuildMessageReactions , GatewayIntentBits.GuildBans, GatewayIntentBits.MessageContent],
+    makeCache: Options.cacheWithLimits({
         MessageManager: 10,
         PresenceManager: 0,
         disableMentions: 'everyone'

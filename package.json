@@ -10,6 +10,11 @@
     "pm2_stop": "pm2 stop blacklist_bot",
     "dev": "nodemon index.js"
   },
+  "nodemonConfig": {
+    "ignore": [
+      "*.json"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Mittelbots/lennas-blacklist-bot.git"

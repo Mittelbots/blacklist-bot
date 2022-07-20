@@ -1,4 +1,3 @@
-const config = require('../../assets/config/config.json');
 const channels = require('../../assets/settings/b_channels.json');
 
 module.exports.messageCreate = async ({message, bot}) => {
