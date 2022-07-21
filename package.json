@@ -1,6 +1,6 @@
 {
   "name": "blacklist_discord_bot",
-  "version": "1.1.2",
+  "version": "1.2.1",
   "description": "A small Bot which ban all userid's which are set in blacklist webhooks from Servers",
   "main": "index.js",
   "scripts": {
@@ -9,6 +9,11 @@
     "pm2_restart": "npm run pm2_stop && pm2 delete blacklist_bot && npm run pm2_start",
     "pm2_stop": "pm2 stop blacklist_bot",
     "dev": "nodemon index.js"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "*.json"
+    ]
   },
   "repository": {
     "type": "git",
@@ -21,9 +26,10 @@
   },
   "homepage": "https://github.com/Mittelbots/lennas-blacklist-bot#readme",
   "dependencies": {
-    "@discordjs/builders": "^0.15.0",
-    "@discordjs/rest": "^0.5.0",
-    "discord.js": "^13.8.1",
+    "@discordjs/builders": "^1.0.0",
+    "@discordjs/rest": "^1.0.0",
+    "discord.js": "^14.0.3",
+    "node-sloc": "^0.2.1",
     "nodemon": "^2.0.19"
   }
 }
