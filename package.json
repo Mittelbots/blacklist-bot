@@ -1,6 +1,6 @@
 {
   "name": "blacklist_discord_bot",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "A small Bot which ban all userid's which are set in blacklist webhooks from Servers",
   "main": "index.js",
   "scripts": {
@@ -27,8 +27,8 @@
   "homepage": "https://github.com/Mittelbots/lennas-blacklist-bot#readme",
   "dependencies": {
     "@discordjs/builders": "^1.0.0",
-    "@discordjs/rest": "^1.0.0",
-    "discord.js": "^14.0.3",
+    "@discordjs/rest": "^1.0.1",
+    "discord.js": "^14.1.1",
     "node-sloc": "^0.2.1",
     "nodemon": "^2.0.19"
   }
