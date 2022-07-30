@@ -47,7 +47,7 @@ module.exports.run = async ({
             const message = main_interaction.options.getString('message');
 
             try {
-                settings[main_interaction.guild.id].message = message || "";
+                settings[main_interaction.guild.id].message = message;
             } catch (err) {
                 settings[main_interaction.guild.id] = {
                     message: message
@@ -57,7 +57,7 @@ module.exports.run = async ({
             fs.writeFileSync('./assets/settings/b_settings.json', JSON.stringify(settings, null, 4));
 
             main_interaction.reply({
-                content: `Message set to ${message}`,
+                content: `Message set to \`${(message) ? message : 'default'}\``,
                 ephemeral: true
             }).catch(err => {})
             break;
