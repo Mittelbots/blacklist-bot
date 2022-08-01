@@ -4,9 +4,8 @@ module.exports.messageCreate = async ({
     bot
 }) => {
 
-    if (!message.webhookId) {
+    if (message.webhookId) {
         const settings = JSON.parse(fs.readFileSync('./assets/settings/b_settings.json', 'utf8'));
-
         if (settings[message.guild.id].channel === message.channel.id) {
 
             message.content = message.content.replace(/\n/g, ' ');
@@ -36,7 +35,7 @@ module.exports.messageCreate = async ({
                     await member.send(`You got banned from ${message.guild.name}. Reason: Banned by Blacklist.`).catch(err => {
                         /**THE USER HAS DM CLOSED */ })
                 }
-
+                
                 await message.guild.members.ban(users[i], {
                         reason: (settings[message.guild.id].message) ? settings[message.guild.id].message : "Banned by Blacklist."
                     })
@@ -46,7 +45,10 @@ module.exports.messageCreate = async ({
                         })
                     })
                     .catch(err => {
-                        if (err.httpStatus !== 404) console.log(err);
+                        if(err.httpStatus === 403) {
+                            return message.channel.send(`I don't have permission to ban ${users[i]}.`).catch(err => {});
+                        }
+                        if (err.httpStatus !== 404) return console.log(err);
                     });
             }
 
