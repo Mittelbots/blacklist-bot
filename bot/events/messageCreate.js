@@ -6,7 +6,14 @@ module.exports.messageCreate = async ({
 
     if (message.webhookId) {
         const settings = JSON.parse(fs.readFileSync('./assets/settings/b_settings.json', 'utf8'));
-        if (settings[message.guild.id].channel === message.channel.id) {
+        try {
+            var channel = settings[message.guild.id].channel;
+        } catch (e) {
+            return;
+        }
+        if(!channel) return;
+        
+        if (channel === message.channel.id) {
 
             message.content = message.content.replace(/\n/g, ' ');
             let messageArray = message.content.split(" ");
