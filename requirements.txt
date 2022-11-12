@@ -1,0 +1,6 @@
+discord==2.0.0
+discord-py-slash-command==4.2.1
+discord.py==2.0.1
+py-cord==2.2.2
+python-dotenv==0.21.0
+```
