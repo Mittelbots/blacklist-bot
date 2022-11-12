@@ -1,7 +1,4 @@
-node_modules
-
-assets/token/token.json
-assets/config/config.json
-assets/settings/b_settings.json
-
+venv/
 ._*
+.env
+__pycache__
