@@ -20,7 +20,7 @@ def run_discord_bot() -> None:
     @bot.event
     async def on_ready() -> None:
         print(f'{bot.user} is ready!')
-        await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="for /help"))
+        await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="for /info"))
 
     @bot.event
     async def on_message(message: discord.Message) -> None:
