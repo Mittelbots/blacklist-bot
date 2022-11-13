@@ -25,49 +25,29 @@ git clone https://github.com/Mittelbots/blacklist-bot.git
 ### ➡️ <b>2.</b> Install the dependencies
 
 ```txt
-npm install
+pip install -r requirements.txt
 ```
 
-### ➡️ <b>3.</b> Change `assets/config/config.example.json` to `config.json` and fill out the fields
+### ➡️ <b>3.</b> Copy and rename `.env.example` `.env` and insert your Bot Token
 
-```json
-{
-    "DISCORD_APPLICATION_ID": "//YOUR APPLICATION ID//",
-}
+```txt
+DISCORD_TOKE=YOURTOKEN
 ```
 
-### ➡️ <b>4.</b> Change `assets/token/token.example.json` to `token.json` and fill out the fields
-
-```json
-{
-    "token": "//YOUR BOT TOKEN//",
-}
 ```
 
-### ➡️ <b>5.</b> Change `assets/settings/b_channels.example.json` to `b_channels.json`. But dont write anything in it.
 
-```json
-{}
-```
-
-### ➡️ <b>5.</b> Run the bot
+### ➡️ <b>4.</b> Run the bot
 
 
 ```txt
-npm run start
+//for dev
+sh start.sh "dev"
 
-// If you use pm2
-start: 
-npm run pm2_start
-
-restart:
-npm run pm2_restart
-
-stop:
-npm run pm2_stop
-
-//For Development reasons
-npm run dev
+//for prod
+sh start.sh "prod"
+//Pm2 required!
 ```
 
-### ➡️ <b>6.</b> Type /settings setchannel [Your Channel]
+
+> For help use /info
