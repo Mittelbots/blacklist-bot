@@ -25,7 +25,12 @@ def settings(bot) -> None:
                 data = {}
                 jsonFile.write(json.dumps(data, indent=4))
 
-        data[str(ctx.guild.id)]["channel"] = channel.id
+        try:
+            data[str(ctx.guild.id)]["channel"] = channel.id
+        except:
+            if str(ctx.guild.id) not in data:
+                data[str(ctx.guild.id)] = {}
+            data[str(ctx.guild.id)]["channel"] = channel.id
 
         success = False
         try: 
@@ -54,8 +59,14 @@ def settings(bot) -> None:
                 data = {}
                 jsonFile.write(json.dumps(data, indent=4))
 
-        data[str(ctx.guild.id)]["banmessage"] = message
+        try:
+            data[str(ctx.guild.id)]["banmessage"] = message
+        except:
+            if str(ctx.guild.id) not in data:
+                data[str(ctx.guild.id)] = {}
 
+            data[str(ctx.guild.id)]["banmessage"] = message
+        
         success = False
         try: 
             with open ("settings.json", "w") as jsonFile:
