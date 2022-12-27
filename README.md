@@ -34,19 +34,10 @@ pip install -r requirements.txt
 DISCORD_TOKE=YOURTOKEN
 ```
 
-```
-
-
 ### ➡️ <b>4.</b> Run the bot
 
-
 ```txt
-//for dev
-sh start.sh "dev"
-
-//for prod
-sh start.sh "prod"
-//Pm2 required!
+docker compose up -d
 ```
 
 
