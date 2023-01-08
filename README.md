@@ -1,3 +1,6 @@
+## Depricated
+> Integrated into @Mittelbot https://github.com/Mittelbots/Mittelbot
+
 # Blacklist Discord bot
 
 ## <b>What is it?</b>
