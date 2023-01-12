@@ -1,4 +1,4 @@
-## Depricated
+## Deprecated
 > Integrated into @Mittelbot https://github.com/Mittelbots/Mittelbot
 
 # Blacklist Discord bot
